@@ -1,8 +1,8 @@
 module ArticlesHelper
   
   # Markenname suchen
-  def getbrandname(brandId)
-    brand = Brand.find_by_id(brandId)    
+  def getbrandname(brandNumber)
+    brand = Brand.find_by_number(brandNumber)    
     return brand.name
   end
   

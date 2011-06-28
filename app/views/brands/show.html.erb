@@ -1,10 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @brand.name %>
-</p>
+<table id="brand_show">
+  <tr class="brand">
+    <td class="pic">
+        <%= image_tag("/images/brands/"+@brand.name+".jpg", :border=>0) %>
+    </td>
+    <td class="info">
+      <div class="name"><b><%= @brand.name %></b></div>
+      <div class="number">Markennummer : <%= @brand.number %></div>
+      <div class="quantity">Artikelanzahl : <%= @articles.length %> </div>
+    </td>
+  </tr>
+  <tr class="admin_bar">
+    <td colspan="3">
+      <%= link_to 'Editieren', edit_brand_path(@brand) %> |
+      <%= link_to 'Löschen', @brand, :confirm => 'Wollen sie wirklich die Marke "'+@brand.name+'" löschen?', :method => :delete %>
+    </td>
+  </tr>
+</table>
+<br />
+<table>
+  <tr>
+    <th>Nummer</th>
+    <th>Name</th>
+    <th>Bezeichnung</th>
+    <th>Beschreibung</th>
+    <th>Kategorie</th>
+    <th>Preis</th>
+  </tr>
 
+<% @articles.each do |article| %>
+  <tr>
+    <td><%= article.number %></td>
+    <td><%= article.name %></td>
+    <td><%= truncate(article.label, :lenght => 30) %></td>
+    <td><%= truncate(article.description, :lenght => 30) %></td>
+    <td><%= getcategoryname(article.category_id) %></td>
+    <td><%= article.price %> €</td>    
+  </tr>
+<% end %>
+</table>
 
-<%= link_to 'Edit', edit_brand_path(@brand) %> |
-<%= link_to 'Back', brands_path %>
+<br />
+
+<%= link_to 'Markenliste', brands_path %>
+<%= link_to 'Zurück', :back %>

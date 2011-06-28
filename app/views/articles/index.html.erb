@@ -1,7 +1,7 @@
-<h1>Listing articles</h1>
+<h1>Artikel Liste:</h1>
 
 <% @articles.each do |article| %>
-  <table id="article_table">
+  <table id="article_index">
     <tr class="article">
       <td class="pic">
         <%= link_to image_tag("/images/articles/"+article.number+".jpg", :border=>0), article %>
@@ -15,20 +15,20 @@
           <span class="number">Artikelnummer : <%= article.number %></span> 
         </div>
         <div class="description">
-          <%= truncate(article.description, :lenght => 120) %>
+          <%= truncate(article.description, :length => 120) %>
         </div>        
       </td>
       <td class="buy">        
         <span class="price"><%= article.price %> €</span> <br />
-        <%= link_to image_tag("/images/buy.png", :border=>0), :action => "show_brand", :id => article.brand_id %> 
+        <%= link_to image_tag("/images/buy.png", :border=>0), :action => "add_to_basket", :id => article.brand_id, :quantity => 1 %> 
       </td>      
     </tr>
     <!-- Hier abfrage ob admin -->
     <tr>
       <td class="admin_bar" colspan="3">
-        <%= link_to 'Show', article %>
-        <%= link_to 'Edit', edit_article_path(article) %>
-        <%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %>
+        <%= link_to 'Anzeigen', article %>
+        <%= link_to 'Editieren', edit_article_path(article) %>
+        <%= link_to 'Löschen', article, :confirm => 'Wollen sie wirklich den Artikel "'+article.name+'" löschen?', :method => :delete %>
       </td>
     </tr>
   </table>

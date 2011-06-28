@@ -2,6 +2,8 @@ Onlineshop::Application.routes.draw do |map|
    
   resources :users
 
+  resources :brands
+
   map.resources :articles
   map.resources :baskets
   map.resources :basket_contents

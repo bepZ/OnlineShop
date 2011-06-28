@@ -14,6 +14,7 @@ class BrandsController < ApplicationController
   # GET /brands/1.xml
   def show
     @brand = Brand.find(params[:id])
+    @articles = Article.find_all_by_brand_id(@brand.number)
 
     respond_to do |format|
       format.html # show.html.erb

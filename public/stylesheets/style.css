@@ -1,6 +1,21 @@
+#content_container {
+    padding-top: 10px;
+}
+#testcontainer {
+}
+
+#content_container .user_panel{
+    float: left;    
+    width: 180px;    
+    height: 700px;
+    margin-right: 10px;
+}
+
+#content_container .content {
+}
+
 table {
-    border: solid 1px black;
-        
+    border: solid 1px black;        
 }
 
 table th {
@@ -9,7 +24,7 @@ table th {
 }
 
 /* Artikel index */
-#article_table {
+#article_index {
     width: 700px;
 }
 
@@ -37,7 +52,7 @@ table th {
    text-decoration: none;
 }
 
-.content .number {
+.number {
     font-size: 8px;
 }
 
@@ -49,4 +64,17 @@ table th {
 .buy .price {
     color: green;
     margin-right: 13px;
+}
+
+/* Brand show */
+#brand_show { 
+    width: 400px;
+}
+
+.brand .info{
+    vertical-align: top;
+}
+
+.quantity {
+    margin-top: 27px;
 }

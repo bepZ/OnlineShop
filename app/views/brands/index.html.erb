@@ -2,12 +2,14 @@
 
 <table>
   <tr>
+    <th>Number</th>
     <th>Name</th>
     <th colspan="3"></th>
   </tr>
 
 <% @brands.each do |brand| %>
   <tr>
+    <td><%= brand.number %></td>
     <td><%= brand.name %></td>
     <td><%= link_to 'Show', brand %></td>
     <td><%= link_to 'Edit', edit_brand_path(brand) %></td>

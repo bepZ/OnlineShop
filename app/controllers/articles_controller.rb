@@ -83,7 +83,17 @@ class ArticlesController < ApplicationController
   end
   
   def show_brand
-    @brand = Brand.find(params[:id])
+    @brand = Brand.find_by_number(params[:id])
+    @articles = Article.find_all_by_brand_id(@brand.number)
     render :template => "brands/show"
+  end
+  
+  def add_to_basket
+    @article = Article.find_by_number(params[:id])
+    @user = 1
+    #später @user = current_user
+    @basket = Basket.find_by_customer_id(@user)
+    #@booking_content = BookingContent.new(:booking_id => @user, :article_id => @article.id, :quantity => params[:quantity])
+    render :template => "baskets/show"
   end
 end

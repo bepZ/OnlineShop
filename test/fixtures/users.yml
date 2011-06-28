@@ -1,13 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: 
+  username: 
   password: 
+  lastname: 
+  firstname: 
   email: 
   rights: 
 
 two:
-  name: 
+  username: 
   password: 
+  lastname: 
+  firstname: 
   email: 
   rights: 
