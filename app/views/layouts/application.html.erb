@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Onlineshop</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body id="site">
+  <div id="toppanel_container">
+  </div>
+  <div id="menu_container">
+    <a href="/articles">Artikel</a> | 
+    <a href="/categories">Kategorien</a> | 
+    <a href="/users">User</a> | 
+    <a href="/customers">Kunden</a> | 
+    <a href="/brands">Marken</a> | 
+    <a href="/bookings">Bestellungen</a> | 
+    <a href="/booking_contents">Bestellungsinhalte</a> | 
+    <a href="/baskets">Warenkörbe</a> | 
+    <a href="/basket_contents">Warenkorbinhalte</a>    
+  </div>
+  <div id="content_container">
+    <%= yield %>
+  </div>  
+</body>
+</html>

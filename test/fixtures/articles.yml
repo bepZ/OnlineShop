@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  number: 
+  name: 
+  label: 
+  description: MyText
+  category_id: 
+  brand_id: 
+  price: 
+
+two:
+  number: 
+  name: 
+  label: 
+  description: MyText
+  category_id: 
+  brand_id: 
+  price: 

@@ -1,0 +1,52 @@
+table {
+    border: solid 1px black;
+        
+}
+
+table th {
+    background-color: #999999;
+    color: white;
+}
+
+/* Artikel index */
+#article_table {
+    width: 700px;
+}
+
+.article {
+    height: 80px;
+}
+
+.pic {
+    width: 90px;
+}
+
+.content {
+    vertical-align: top;
+}
+
+.admin_bar {
+    background-color: lightgray;
+}
+
+.admin_bar a:hover{
+    color: white;
+}
+
+.label a{
+   text-decoration: none;
+}
+
+.content .number {
+    font-size: 8px;
+}
+
+.buy {
+    width: 150px;
+    text-align: right;
+}
+
+.buy .price {
+    color: green;
+    margin-right: 13px;
+}

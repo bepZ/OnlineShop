@@ -1,0 +1,27 @@
+<h1>Listing basket_contents</h1>
+
+<table>
+  <tr>
+    <th>Basket</th>
+    <th>Article</th>
+    <th>Quantity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @basket_contents.each do |basket_content| %>
+  <tr>
+    <td><%= basket_content.basket_id %></td>
+    <td><%= basket_content.article_id %></td>
+    <td><%= basket_content.quantity %></td>
+    <td><%= link_to 'Show', basket_content %></td>
+    <td><%= link_to 'Edit', edit_basket_content_path(basket_content) %></td>
+    <td><%= link_to 'Destroy', basket_content, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Basket content', new_basket_content_path %>

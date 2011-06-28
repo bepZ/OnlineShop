@@ -1,0 +1,38 @@
+<h1>Listing articles</h1>
+
+<% @articles.each do |article| %>
+  <table id="article_table">
+    <tr class="article">
+      <td class="pic">
+        <%= link_to image_tag("/images/articles/"+article.number+".jpg", :border=>0), article %>
+      </td>
+      <td class="content">            
+        <div class="label">      
+          <b> 
+            <%= link_to getbrandname(article.brand_id), :action => "show_brand", :id => article.brand_id %> |
+            <%= link_to article.label, article %> <br/>
+          </b>
+          <span class="number">Artikelnummer : <%= article.number %></span> 
+        </div>
+        <div class="description">
+          <%= truncate(article.description, :lenght => 120) %>
+        </div>        
+      </td>
+      <td class="buy">        
+        <span class="price"><%= article.price %> €</span> <br />
+        <%= link_to image_tag("/images/buy.png", :border=>0), :action => "show_brand", :id => article.brand_id %> 
+      </td>      
+    </tr>
+    <!-- Hier abfrage ob admin -->
+    <tr>
+      <td class="admin_bar" colspan="3">
+        <%= link_to 'Show', article %>
+        <%= link_to 'Edit', edit_article_path(article) %>
+        <%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+    </tr>
+  </table>
+  <br />
+<% end %>
+  
+<%= link_to 'Neuer Artikel', new_article_path %>

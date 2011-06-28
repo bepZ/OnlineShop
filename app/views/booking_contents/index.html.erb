@@ -1,0 +1,27 @@
+<h1>Listing booking_contents</h1>
+
+<table>
+  <tr>
+    <th>Booking</th>
+    <th>Article</th>
+    <th>Quantity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @booking_contents.each do |booking_content| %>
+  <tr>
+    <td><%= booking_content.booking_id %></td>
+    <td><%= booking_content.article_id %></td>
+    <td><%= booking_content.quantity %></td>
+    <td><%= link_to 'Show', booking_content %></td>
+    <td><%= link_to 'Edit', edit_booking_content_path(booking_content) %></td>
+    <td><%= link_to 'Destroy', booking_content, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Booking content', new_booking_content_path %>
